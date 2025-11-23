@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>10th Board Exam Countdown – Shaheen Value School Hyderabad</title>
+    <meta name="description" content="Official Exam Countdown for Shaheen Value School Hyderabad.">
+    <meta name="theme-color" content="#4CAF50">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-v2-192.png">
+    <link rel="apple-touch-icon" href="icon-v2-192.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@400;700&family=Russo+One&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-shaheen">
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Shaheen Value School Logo" class="logo">
+        </div>
+        <h1>10th Board Exam Countdown</h1>
+        <div class="clock-display" id="realTimeClock">--:--:--</div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Countdown Section -->
+        <section class="countdown-container" id="countdownSection">
+            <div class="time-unit">
+                <span id="days">00</span>
+                <label>Days</label>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-unit">
+                <span id="hours">00</span>
+                <label>Hours</label>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-unit">
+                <span id="minutes">00</span>
+                <label>Minutes</label>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-unit">
+                <span id="seconds">00</span>
+                <label>Seconds</label>
+            </div>
+        </section>
+
+        <!-- Celebration Message (Hidden by default) -->
+        <div id="celebrationMessage" class="celebration hidden">
+            🎉 Best of Luck, Shaheenites! You Did It!
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-container">
+            <p id="quoteText">"Believe you can and you're halfway there."</p>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="control-group">
+                <button id="settingsBtn" class="btn btn-outline" title="Settings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                    Settings
+                </button>
+            </div>
+
+            <div class="control-group">
+                <button id="shareBtn" class="btn btn-outline">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                    Share
+                </button>
+            </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+            <button class="theme-btn" data-theme="theme-light" title="Light Theme">☀️</button>
+            <button class="theme-btn" data-theme="theme-dark" title="Dark Theme">🌙</button>
+            <button class="theme-btn active" data-theme="theme-shaheen" title="Shaheen Theme">🦅</button>
+            <button class="theme-btn" data-theme="theme-omer" title="Omer's Theme">
+                <img src="omer-icon.png" alt="Omer's Theme"
+                    style="width: 45px; height: 45px; border-radius: 50%; vertical-align: middle;">
+            </button>
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Settings</h2>
+            <div class="setting-item">
+                <label for="examDateInput">Target Date:</label>
+                <input type="datetime-local" id="examDateInput">
+            </div>
+            <div class="setting-item">
+                <label for="fontSelect">Font Style:</label>
+                <select id="fontSelect" class="setting-input">
+                    <option value="Poppins">Default (Poppins)</option>
+                    <option value="'Dancing Script', cursive">Sherbackoffa Regular</option>
+                    <option value="'Russo One', sans-serif">Bold RUS Regular</option>
+                </select>
+            </div>
+            <button id="changeDateBtn" class="btn full-width">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="shareModal" class="modal hidden">
+        <div class="modal-content share-modal-content">
+            <div class="share-header">
+                <h3>Share Countdown</h3>
+                <span class="close-modal close-share">&times;</span>
+            </div>
+            <div class="share-options">
+                <button class="share-option" id="shareNativeBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                    Share via...
+                </button>
+                <button class="share-option" id="shareWhatsappBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    WhatsApp
+                </button>
+                <button class="share-option" id="shareFacebookBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                    Facebook
+                </button>
+                <button class="share-option" id="shareTwitterBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                    Twitter
+                </button>
+                <button class="share-option" id="shareCopyBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    Copy Link
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by MD. Omer Kaleem (Student of Shaheen)</p>
+        <small>Optimized for BenQ Interactive Boards</small>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('serviceWorker.js')
+                .then(reg => console.log('SW Registered'))
+                .catch(err => console.log('SW Error', err));
+        }
+    </script>
+</body>
+
+</html>
